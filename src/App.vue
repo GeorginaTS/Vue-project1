@@ -1,14 +1,20 @@
 <template>
-  <div>
-    <h1 class="text-3xl w-full text-center font-extrabold p-4 text-emerald-600">{{ msg }}</h1>
-  </div>
+    <div class="flex flex-col  justify-center items-center">
+      <Header />
+      <Grid />
+    </div>
+
 </template>
 <script>
+import Header from "./components/Header.vue"
+import Grid from "./components/Grid.vue"
+
 export default {
   name: "App",
+  components: {Header, Grid},
   data() {
     return{
-      msg: "Hello world"
+      title: "Best Store"
     }
   }
   
