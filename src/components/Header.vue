@@ -3,11 +3,11 @@
         <div>
             <img src="../assets/img/Best.png" alt="Logo" class="h-32">
         </div> 
-        <nav class="w-96 border border-slate-400 mr-10">
+        <nav class="w-96 border border-neutral-300 mr-10 rounded-lg bg-neutral-200">
             <ul class="w-full flex justify-between">
                 <li>Home</li>
                 <li>Products</li>
-                <li>contact</li>
+                <li @click="showCart">🛒 cart</li>
             </ul>
         </nav>      
     </div>

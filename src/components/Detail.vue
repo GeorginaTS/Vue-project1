@@ -1,12 +1,13 @@
 <template>
-    <div class="w-[90%] border border-neutral-300 p-4 rounded-l-xl">
+    <div class="w-[90%] border border-neutral-300 p-4 rounded-l-xl flex flex-col items-center">
         <button @click="close" class="text-rose-700 underline">x close</button><br>
       <span class="text-xs text-neutral-400">{{ id }}</span>   
       <h3>{{ product.title }} : {{ product.price}}€</h3> 
-      <img :src="product.image" :alt="product.title"> 
+      <img :src="product.image" :alt="product.title" class="w-[50%]"> 
+      <hr class="w-full bg-neutral-400 h-1 my-8">
       <p>{{product.description}}</p>
-      <br>
-      <hr><br>
+
+      <hr class="w-full bg-neutral-700"><br>
         <div class="text-xs">{{ product }}</div>
     </div>
 </template>
@@ -59,5 +60,8 @@ export default {
 }
 </script>
 <style>
-    
+    h3 {
+        font-weight: bold;
+        margin-bottom: 2rem;
+    }
 </style>
