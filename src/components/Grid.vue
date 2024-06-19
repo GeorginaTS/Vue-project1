@@ -27,7 +27,14 @@ export default {
       try {
         const response = await fetch(`https://fakestoreapi.com/products`);
         this.content = await response.json()
-        this.newContent = await this.content
+        this.newContent = await this.content 
+        console.log("category", this.category, "str", this.str)
+        if (this.str !== "") {
+          this.newContent = await this.newContent.filter(e => e.title.toLowerCase().includes(this.str.toLowerCase()))
+        }
+        if (this.category !== "0") {
+          this.newContent = await this.newContent.filter(e => e.category == this.category)
+        }
         console.log('Success');
       } catch {
         console.error('Failed');

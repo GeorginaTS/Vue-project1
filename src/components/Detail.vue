@@ -1,6 +1,6 @@
 <template>
     <div class="w-[90%] border border-neutral-300 p-4 rounded-l-xl">
-        <button @click="close">x close</button><br>
+        <button @click="close" class="text-rose-700 underline">x close</button><br>
       <span class="text-xs text-neutral-400">{{ id }}</span>   
       <h3>{{ product.title }} : {{ product.price}}€</h3> 
       <img :src="product.image" :alt="product.title"> 
