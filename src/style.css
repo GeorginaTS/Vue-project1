@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-hr{
-    width: 100%;
-    height: 4 px;
-    background-color:blue;
+body {
+    color:black;
 }

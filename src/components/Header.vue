@@ -1,14 +1,15 @@
 <template>
-    <div class="w-full">
-        <h1 class="text-3xl w-full text-center font-extrabold p-4 text-emerald-600">{{ title }}</h1> 
-        <nav class="w-full">
-            <ul class="w-full flex justify-around">
+    <div class="w-full flex justify-between items-center">
+        <div>
+            <img src="../assets/img/Best.png" alt="Logo" class="h-32">
+        </div> 
+        <nav class="w-96 border border-slate-400 mr-10">
+            <ul class="w-full flex justify-between">
                 <li>Home</li>
                 <li>Products</li>
                 <li>contact</li>
             </ul>
-        </nav>
-        
+        </nav>      
     </div>
 </template>
 <script>
@@ -23,13 +24,11 @@ export default {
 </script>
 <style scoped>
 ul {
-    padding: 1rem;
+    padding: 0 2rem;
 }
 li {
-    border: 1px solid green;
-    padding:  0.5rem 1rem;
-    border-radius: 0.5rem; 
-    font-weight: bold;
     text-transform: uppercase;
+    padding: 0.5rem;
+    font-weight: bold;
 }
 </style>
