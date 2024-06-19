@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        Search string: {{str}}
+        Search string: {{str}} category: {{ category }}
         <br>
         <ul class="flex flex-wrap h-fit gap-4 justify-center">
             <li v-for="item in newContent" :key="item.id">
@@ -13,7 +13,7 @@
 import Card from "./Card.vue"
 export default {
     name:"Grid",
-    props: ["str"],
+    props: ["str", "category"],
     components: {Card},
     data() {
         return {
@@ -37,12 +37,21 @@ export default {
       str(value) {
         console.log("str value= ", value) 
         if (value !== "") {
-            this.newContent = this.content.filter(e => e.title.toLowerCase().includes(value))
+            this.newContent = this.content.filter(e => e.title.toLowerCase().includes(value.toLowerCase()))
             console.log(this.newContent)
         } else {
           this.newContent = this.content
         }
+      },
+      category(value) {
+        console.log("category value= ", value) 
+        if (value !== "") {
+            this.newContent = this.content.filter(e => e.category.includes(value))
+            console.log(this.newContent)
+        } else {
+          this.newContent = this.content
+        }
+      }
     }
-  }
 }
 </script>

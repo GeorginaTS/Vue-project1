@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div class="w-full">
         <h1 class="text-3xl w-full text-center font-extrabold p-4 text-emerald-600">{{ title }}</h1> 
-        <nav>
-            <ul class="flex justify-around">
+        <nav class="w-full">
+            <ul class="w-full flex justify-around">
                 <li>Home</li>
                 <li>Products</li>
                 <li>contact</li>
@@ -21,5 +21,15 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
+ul {
+    padding: 1rem;
+}
+li {
+    border: 1px solid green;
+    padding:  0.5rem 1rem;
+    border-radius: 0.5rem; 
+    font-weight: bold;
+    text-transform: uppercase;
+}
 </style>
