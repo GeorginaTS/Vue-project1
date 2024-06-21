@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col items-center w-full">
-      <h3 class="w-[50%] text-center bg-neutral-200 rounded">Search string:["{{str}}"] Category: {{ category }} orderBy: {{ orderBy}}</h3>
+      <h3 class="w-[90%] text-center bg-neutral-200 rounded">Search string:["{{str}}"] Category: {{ category }} orderBy: {{ orderBy}}</h3>
         <h3 v-if="newContent.length == 0">NO hi ha cap producte seleccionat</h3>
         <br>
         <ul class="flex flex-wrap h-fit gap-4 justify-center">

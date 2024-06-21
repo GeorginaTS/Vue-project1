@@ -45,7 +45,8 @@ export default {
             category: "0",
             minPrice: "",
             maxPrice: "",
-            orderBy: "title"
+            orderBy: "title",
+            order:"ASC"
         }
     },
     watch: {
