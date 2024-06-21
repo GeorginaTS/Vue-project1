@@ -1,10 +1,12 @@
 <template>
-    <div class="w-[90%] border border-neutral-300 p-4 rounded-l-xl flex flex-col items-center">
+    <div class="w-full border border-neutral-300 p-4 rounded-l-xl flex flex-col items-center">
         <button @click="close" class="text-rose-700 underline">x close</button><br>
       <span class="text-xs text-neutral-400">{{ id }}</span>   
       <h3>{{ product.title }} : {{ product.price}}€</h3> 
-      <img :src="product.image" :alt="product.title" class="w-[50%]"> 
+      <img :src="product.image" :alt="product.title" class="w-[50%]">
       <hr class="w-full bg-neutral-400 h-1 my-8">
+      <StarRating :stars="product.rating" v-if="product.rating"/>
+      <br>
       <p>{{product.description}}</p>
 
       <hr class="w-full bg-neutral-700"><br>
@@ -12,6 +14,7 @@
     </div>
 </template>
 <script>
+import StarRating from "./StarRating.vue"
 export default {
     name: "Detail",
     data() {
@@ -20,13 +23,14 @@ export default {
         }
     },
     props: ["id"],
+    components: {StarRating},
     methods: {
         close() {
             this.$emit('idSelected', 0);
         }
 
     },
-    async mounted() {
+    async created() {
       try {
         if (this.id > 0) {
             const res = await fetch(`https://fakestoreapi.com/products/${this.id}`);
@@ -49,7 +53,7 @@ export default {
                     this.product = await res.json()
                     console.log('Success', value);
                 } else {
-                    console.log("id = 0")
+                    console.log("id <= 0")
                 }
 
             } catch {

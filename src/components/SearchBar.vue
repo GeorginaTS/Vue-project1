@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full flex  flex-col items-center justify-start p-4 gap-10 bg-neutral-200 rounded-r-xl h-full">
+    <div class="w-[18rem] flex  flex-col items-center justify-start p-4 gap-10 bg-neutral-200 rounded-r-xl h-full">
         <div>search bar</div>
         <div>
             <input type="text" name="searchStr" v-model="searchStr" class="w-48 border border-gray-800"

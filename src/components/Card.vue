@@ -13,6 +13,10 @@ export default {
         return {
 
         }
+    }, methods: {
+        normalizePrice(value) {
+
+        }
     }
     
 }
