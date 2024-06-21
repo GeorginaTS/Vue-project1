@@ -14,7 +14,7 @@
 import Card from "./Card.vue"
 export default {
     name:"Grid",
-    props: ["str", "category"],
+    props: ["str", "category", "minPrice", "maxPrice"],
     components: {Card},
     data() {
         return {
@@ -35,6 +35,12 @@ export default {
         if (this.category !== "0") {
           this.newContent = await this.newContent.filter(e => e.category == this.category)
         }
+        if (this.minPrice !== "" && this.minPrice > 0) {
+          this.newContent = await this.newContent.filter(e => e.price > this.minPrice)
+        }
+        if (this.maxPrice !== "" && this.maxPrice > 0) {
+          this.newContent = await this.newContent.filter(e => e.price < this.maxPrice)
+        }
         console.log('Success');
       } catch {
         console.error('Failed');
@@ -43,13 +49,36 @@ export default {
     },
     watch: {
       str(value) {
-        console.log("str value= ", value) 
-        if (value !== "") {
-            this.newContent = this.content.filter(e => e.title.toLowerCase().includes(value.toLowerCase()))
+        this.updateContent()
+      },
+      category(value) {
+        this.updateContent()
+      },
+      minPrice(value){
+        this.updateContent()
+      },
+      maxPrice(value){
+        this.updateContent()
+      }
+    },
+    methods: {
+      showDetail(id) {
+        console.log("Grid showDetail", id)
+        this.$emit('idSelected', id);
+      },
+      updateContent() {
+        if (this.str !== "") {
+            this.newContent = this.content.filter(e => e.title.toLowerCase().includes(this.str.toLowerCase()))
             
             if (this.category != "0") {
               console.log("category" , this.category)
               this.newContent = this.newContent.filter(e => e.category == this.category)
+            }
+            if (this.minPrice !== "" && this.minPrice > 0) {
+              this.newContent = this.newContent.filter(e => e.price > this.minPrice)
+            }
+            if (this.maxPrice !== "" && this.maxPrice > 0) {
+              this.newContent =  this.newContent.filter(e => e.price < this.maxPrice)
             }
             console.log(this.newContent)
         } else {
@@ -57,29 +86,14 @@ export default {
           if (this.category != "0") {
               console.log("category" , this.category)
               this.newContent = this.newContent.filter(e => e.category == this.category)
-          } 
+          }
+          if (this.minPrice !== "" && this.minPrice > 0) {
+              this.newContent = this.newContent.filter(e => e.price > this.minPrice)
+          }
+          if (this.maxPrice !== "" && this.maxPrice > 0) {
+              this.newContent =  this.newContent.filter(e => e.price < this.maxPrice)
+          }
         }
-      },
-      category(value) {
-        console.log("category value= ", value) 
-        if (value !== "0") {
-            this.newContent = this.content.filter(e => e.category == value)
-            if (this.str != "") {
-              this.newContent = this.newContent.filter(e => e.title.toLowerCase().includes(this.str.toLowerCase()))
-            }
-            console.log(this.newContent)
-        } else {
-          this.newContent = this.content
-          if (this.str != "") {
-              this.newContent = this.newContent.filter(e => e.title.toLowerCase().includes(this.str.toLowerCase()))
-            }
-        }
-      }
-    },
-    methods: {
-      showDetail(id) {
-        console.log("Grid showDetail", id)
-        this.$emit('idSelected', id);
       }
     }
 }

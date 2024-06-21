@@ -8,9 +8,6 @@
       <StarRating :stars="product.rating" v-if="product.rating"/>
       <br>
       <p>{{product.description}}</p>
-
-      <hr class="w-full bg-neutral-700"><br>
-        <div class="text-xs">{{ product }}</div>
     </div>
 </template>
 <script>

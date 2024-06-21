@@ -43,17 +43,22 @@ export default {
             searchStr: "",
             categories: "",
             category: "0",
-            minPrice: 0,
-            maxPrice: 1000
+            minPrice: "",
+            maxPrice: ""
         }
     },
     watch: {
         searchStr(value) {
-            console.log("searchStr", value)
             this.$emit('searchStr', value);
         },
         category(value) {
             this.$emit('category', value);
+        },
+        minPrice(value) {
+            this.$emit('minPrice', value)
+        },
+        maxPrice(value) {
+            this.$emit('maxPrice', value)
         }
     },
     async mounted() {
