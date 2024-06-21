@@ -22,16 +22,16 @@
         <hr>
         <div class="flex flex-col gap-2">
             Order By:
-            <select name="orderBy" id="orderBy" class="w-48">
+            <select name="orderBy" id="orderBy" class="w-48" v-model="orderBy">
                 <option value="title">Title</option>
                 <option value="price">Price</option>
             </select>
-            <div class="flex justify-between p-2">
+            <!-- <div class="flex justify-between p-2">
                 <div>ASC 
-                    <input type="radio" name="order" id="order" value="asc" class="w-4"></div>
+                    <input type="radio" name="order" id="order" value="asc" class="w-4" checked v-model="order"> </div>
                 <div>DESC 
-                    <input type="radio" name="order" id="order" value="desc" class="w-4"></div>
-            </div>
+                    <input type="radio" name="order" id="order" value="desc" class="w-4" v-model="order"></div>
+            </div> -->
         </div>
     </div>
 </template>
@@ -44,7 +44,8 @@ export default {
             categories: "",
             category: "0",
             minPrice: "",
-            maxPrice: ""
+            maxPrice: "",
+            orderBy: "title"
         }
     },
     watch: {
@@ -59,6 +60,12 @@ export default {
         },
         maxPrice(value) {
             this.$emit('maxPrice', value)
+        },
+        orderBy(value) {
+            this.$emit('orderBy', value)
+        },
+        order(value) {
+            this.$emit('order', value)
         }
     },
     async mounted() {
