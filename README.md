@@ -1,7 +1,9 @@
-# Vue 3 + Vite
+# App Vue 3 + Vite + Tailwind 
+## https://fakestoreapi.com/
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-## Recommended IDE Setup
+## Vue Project FAKE STORE
+Vue + Vite  project with fakestoreapi.com
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+## Deployment
+Azure - https://orange-forest-07110b20f.6.azurestaticapps.net

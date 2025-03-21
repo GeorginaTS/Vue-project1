@@ -18,13 +18,11 @@ export default {
             return Math.round(this.stars.rate)
         }
     },
-    mounted() {
-        
+    mounted() {  
          const starsDiv = document.getElementById("stars")
          console.log("mounted", starsDiv )
         for(let i =0; i < this.roundStars ; i++) {
             let star = document.createElement("div")
-            //star.innerText = "star"
             star.innerHTML ="⭐"
             starsDiv.appendChild(star);
         }  

@@ -47,9 +47,8 @@ export default {
                 if (value > 0) {
                     const res = await fetch(`https://fakestoreapi.com/products/${value}`);
                     this.product = await res.json()
-                    console.log('Success', value);
                 } else {
-                    console.log("id <= 0")
+                    console.error("id <= 0")
                 }
 
             } catch {

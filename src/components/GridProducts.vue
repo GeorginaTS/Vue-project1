@@ -54,7 +54,6 @@ export default {
             return 0;}
           )
         }
-        console.log('Success');
       } catch {
         console.error('Failed');
       }
@@ -79,7 +78,6 @@ export default {
     },
     methods: {
       showDetail(id) {
-        console.log("Grid showDetail", id)
         this.$emit('idSelected', id);
       },
       updateContent() {
@@ -87,7 +85,6 @@ export default {
             this.newContent = this.content.filter(e => e.title.toLowerCase().includes(this.str.toLowerCase()))
             
             if (this.category != "0") {
-              console.log("category" , this.category)
               this.newContent = this.newContent.filter(e => e.category == this.category)
             }
             if (this.minPrice !== "" && this.minPrice > 0) {
@@ -96,11 +93,9 @@ export default {
             if (this.maxPrice !== "" && this.maxPrice > 0) {
               this.newContent =  this.newContent.filter(e => e.price < this.maxPrice)
             }
-            console.log(this.newContent)
         } else {
           this.newContent = this.content
           if (this.category != "0") {
-              console.log("category" , this.category)
               this.newContent = this.newContent.filter(e => e.category == this.category)
           }
           if (this.minPrice !== "" && this.minPrice > 0) {

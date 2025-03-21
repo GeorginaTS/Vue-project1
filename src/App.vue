@@ -5,7 +5,7 @@
       <SearchBar @searchStr="searchValue" @category="searchCategory" @minPrice="searchMinPrice" @maxPrice="searchMaxPrice" @orderBy="searchOrderBy" class="w-[18rem]" />
       <Detail :id="idSelected" :key="idSelected"  @idSelected="closeDetail" v-if="idSelected>0"/>
       <Grid :str="searchStr" :category="category" :minPrice="minPrice" :maxPrice="maxPrice" :orderBy="orderBy" @idSelected="showDetail" class="w-full" v-if="idSelected == 0" />  
-      <Grid :str="searchStr" :category="category" :minPrice="minPrice" :maxPrice="maxPrice" :orderBy="orderBy" @idSelected="showDetail"  class="w-[16rem]" v-if="idSelected > 0"/>  
+      <Grid :str="searchStr" :category="category" :minPrice="minPrice" :maxPrice="maxPrice" :orderBy="orderBy" @idSelected="showDetail"  class="w-[16rem]" v-else/>  
     </div>
   </div>
 

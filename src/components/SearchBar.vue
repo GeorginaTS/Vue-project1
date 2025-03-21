@@ -73,7 +73,6 @@ export default {
         try {
             const response = await fetch(`https://fakestoreapi.com/products/categories`);
             this.categories = await response.json()
-            console.log('Success');
         } catch {
             console.error('Failed');
         }
