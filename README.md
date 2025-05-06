@@ -6,4 +6,4 @@
 Vue + Vite  project with fakestoreapi.com
 
 ## Deployment
-Azure - https://orange-forest-07110b20f.6.azurestaticapps.net
+https://ashy-ground-02cd81d10.6.azurestaticapps.net/
